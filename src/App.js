@@ -21,7 +21,13 @@ function App() {
   const [currentCountry, setCurrentCountry] = useState('global');
   const [countryData, setCountryData] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapPosition, setMapPosition] = useState({
+    lat: 51.505,
+    lng: -0.09,
+  });
+  const [mapZoom, setMapZoom] = useState(2);
   const [casesType, setCasesType] = useState('cases');
+  const [mapCountries, setMapCountries] = useState([]);
 
   useEffect(() => {
     const fetchGlobalData = () => {
@@ -38,12 +44,12 @@ function App() {
       fetch(countryURL)
         .then((response) => response.json())
         .then((data) => {
-          setTableData(data);
-
           const countries = data.map((item) => {
             return { name: item.country, value: item.countryInfo.iso2 };
           });
           setCountryNames(countries);
+          setTableData(data);
+          setMapCountries(data);
         });
     };
     fetchCountriesNames();
@@ -63,10 +69,14 @@ function App() {
         .then((data) => {
           setCurrentCountry(countryCode);
           setCountryData(data);
+          setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
+          setMapZoom(4);
         });
     };
     fetchCountriesData();
   };
+
+  console.log(mapCountries);
 
   return (
     <Container>
@@ -80,7 +90,11 @@ function App() {
           />
         </Header>
         <CardList setCasesType={setCasesType} countryData={countryData} />
-        <Map />
+        <Map
+          mapCountries={mapCountries}
+          mapPosition={mapPosition}
+          mapZoom={mapZoom}
+        />
       </LeftSection>
       <RightSection>
         <Table tableData={tableData} />
