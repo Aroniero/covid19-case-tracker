@@ -17,18 +17,15 @@ import Table from './components/Table/Table';
 import Chart from './components/Chart/Chart';
 
 function App() {
-  const [countryNames, setCountryNames] = useState([
-    'Poland',
-    'Russia',
-    'Belarus',
-  ]);
+  const [countryNames, setCountryNames] = useState([]);
   const [currentCountry, setCurrentCountry] = useState('global');
   const [countryData, setCountryData] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [casesType, setCasesType] = useState('cases');
 
   useEffect(() => {
-    const fetchGlobalData = async () => {
-      await fetch('https://disease.sh/v3/covid-19/all')
+    const fetchGlobalData = () => {
+      fetch('https://disease.sh/v3/covid-19/all')
         .then((response) => response.json())
         .then((data) => setCountryData(data));
     };
@@ -37,7 +34,7 @@ function App() {
 
   useEffect(() => {
     const countryURL = 'https://disease.sh/v3/covid-19/countries';
-    const fetchCountriesNames = async () => {
+    const fetchCountriesNames = () => {
       fetch(countryURL)
         .then((response) => response.json())
         .then((data) => {
@@ -49,7 +46,6 @@ function App() {
           setCountryNames(countries);
         });
     };
-
     fetchCountriesNames();
   }, []);
 
@@ -72,8 +68,6 @@ function App() {
     fetchCountriesData();
   };
 
-  console.log(tableData);
-
   return (
     <Container>
       <GlobalStyle />
@@ -85,12 +79,12 @@ function App() {
             handleCountryChange={handleCountryChange}
           />
         </Header>
-        <CardList countryData={countryData} />
+        <CardList setCasesType={setCasesType} countryData={countryData} />
         <Map />
       </LeftSection>
       <RightSection>
         <Table tableData={tableData} />
-        <Chart />
+        <Chart casesType={casesType} />
       </RightSection>
     </Container>
   );

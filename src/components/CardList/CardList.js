@@ -11,13 +11,30 @@ const CardList = ({
     todayDeaths,
     todayRecovered,
   },
+  setCasesType,
 }) => {
-  console.log(cases);
   return (
     <CardListContainer>
-      <Card title='Cases' totalCases={cases} todayCases={todayCases} />
-      <Card title='Deaths' totalCases={deaths} todayCases={todayDeaths} />
       <Card
+        onClick={(e) => {
+          setCasesType('cases');
+        }}
+        title='Cases'
+        totalCases={cases}
+        todayCases={todayCases}
+      />
+      <Card
+        onClick={(e) => {
+          setCasesType('deaths');
+        }}
+        title='Deaths'
+        totalCases={deaths}
+        todayCases={todayDeaths}
+      />
+      <Card
+        onClick={(e) => {
+          setCasesType('recovered');
+        }}
         title='Recovered'
         totalCases={recovered}
         todayCases={todayRecovered}

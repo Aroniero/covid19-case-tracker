@@ -9,10 +9,11 @@ import {
 } from './Card.style';
 // import CountUp from 'react-countup';
 
-const Card = ({ title, totalCases, todayCases }) => {
+const Card = ({ title, totalCases, todayCases, ...props }) => {
   return (
     <CardWrapper
-    // color={color}
+      onClick={props.onClick}
+      // color={color}
     >
       <CardHeader
       // color={color}
