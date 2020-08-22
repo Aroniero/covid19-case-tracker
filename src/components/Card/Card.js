@@ -7,7 +7,6 @@ import {
   CardValue,
   CardDate,
 } from './Card.style';
-// import CountUp from 'react-countup';
 
 const Card = ({ title, totalCases, todayCases, casesType, ...props }) => {
   return (
@@ -18,15 +17,19 @@ const Card = ({ title, totalCases, todayCases, casesType, ...props }) => {
       <CardHeader>{title.toUpperCase()}</CardHeader>
       <CardBody>
         <CardValue
-        // start={0} end={value} duration={2} separator=','
-        >
-          Total: {totalCases}
-        </CardValue>
+          prefix='Total: '
+          start={0}
+          end={totalCases ? totalCases : 0}
+          duration={1}
+          separator=','
+        />
         <CardValue
-        // start={0} end={value} duration={2} separator=','
-        >
-          Today: {todayCases}
-        </CardValue>
+          prefix='Today: '
+          start={0}
+          end={todayCases ? todayCases : 0}
+          duration={1}
+          separator=','
+        />
       </CardBody>
     </CardWrapper>
   );

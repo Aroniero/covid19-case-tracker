@@ -6,6 +6,7 @@ import {
   TableRow,
   TableData,
 } from './Table.style';
+import CountUp from 'react-countup';
 
 const Table = ({ tableData }) => {
   return (
@@ -14,17 +15,13 @@ const Table = ({ tableData }) => {
       <TableContainer>
         <TableBody>
           {tableData
-            .sort((a, b) => {
-              if (a.cases > b.cases) {
-                return -1;
-              } else {
-                return 1;
-              }
-            })
+            .sort((a, b) => (a.cases > b.cases ? -1 : 1))
             .map(({ country, cases }) => (
               <TableRow key={country}>
                 <TableData>{country}</TableData>
-                <TableData>{cases}</TableData>
+                <TableData>
+                  <CountUp start={0} end={cases} duration={1} separator=',' />
+                </TableData>
               </TableRow>
             ))}
         </TableBody>

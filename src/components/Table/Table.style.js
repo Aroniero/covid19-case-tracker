@@ -12,8 +12,11 @@ export const TableContainer = styled.table`
   overflow: auto;
   height: 200px;
   width: 100%;
+  margin-bottom: 50px;
+
   @media (${({ theme }) => theme.media.lg}) {
     height: 450px;
+    margin: 0;
   }
 `;
 

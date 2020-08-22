@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import CountUp from 'react-countup';
 
 export const CardWrapper = styled.div`
   /* border: 1px solid black; */
@@ -18,11 +19,14 @@ export const CardHeader = styled.h2`
   text-align: center;
 `;
 
-export const CardBody = styled.div``;
+export const CardBody = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const CardTitle = styled.h2``;
 
-export const CardValue = styled.div`
+export const CardValue = styled(CountUp)`
   padding: 2px 0;
 `;
 
