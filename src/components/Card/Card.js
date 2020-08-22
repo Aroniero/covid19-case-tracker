@@ -10,13 +10,10 @@ import {
 // import CountUp from 'react-countup';
 
 const Card = ({ title, totalCases, todayCases, casesType, ...props }) => {
-  console.log(casesType);
-
   return (
     <CardWrapper
       onClick={props.onClick}
       color={casesType === title ? casesType : null}
-      // color={color}
     >
       <CardHeader>{title.toUpperCase()}</CardHeader>
       <CardBody>

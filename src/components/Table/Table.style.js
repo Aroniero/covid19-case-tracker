@@ -7,12 +7,14 @@ export const TableHeading = styled.h2`
 
 export const TableContainer = styled.table`
   width: 100%;
-  /* margin: 20px 0; */
   padding: 0 20px;
   display: block;
   overflow: auto;
   height: 200px;
   width: 100%;
+  @media (${({ theme }) => theme.media.lg}) {
+    height: 450px;
+  }
 `;
 
 export const TableBody = styled.tbody`

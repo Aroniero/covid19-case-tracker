@@ -1,13 +1,35 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 1200px;
   margin: 0 auto;
-  /* display: flex; */
+
+  @media (${({ theme }) => theme.media.sm}) {
+    max-width: 800px;
+  }
+  @media (${({ theme }) => theme.media.lg}) {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+  }
 `;
 export const Header = styled.div`
-  background-color: red;
   padding: 20px 20px;
+  border-radius: 10px;
+  margin: 20px 20px;
+  box-shadow: 0px 0px 10px -6px #000000;
+  background-color: white;
+
+  @media (${({ theme }) => theme.media.md}) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* @media (${({ theme }) => theme.media.lg}) {
+    margin-top: 0;
+  } */
 `;
 
 export const Heading = styled.h1`

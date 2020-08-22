@@ -71,14 +71,14 @@ function App() {
         .then((data) => {
           setCurrentCountry(countryCode);
           setCountryData(data);
-          setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
+          countryCode === 'global'
+            ? setMapPosition([51.505, -0.09])
+            : setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
           setMapZoom(4);
         });
     };
     fetchCountriesData();
   };
-
-  console.log(mapCountries);
 
   return (
     <ThemeProvider theme={theme}>
@@ -86,7 +86,7 @@ function App() {
       <Container>
         <LeftSection>
           <Header>
-            <Heading> Covid-19 - Tracker </Heading>
+            <Heading> Covid-19 - Case - Tracker </Heading>
             <CountryDropdown
               countries={countryNames}
               handleCountryChange={handleCountryChange}
