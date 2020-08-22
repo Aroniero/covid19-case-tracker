@@ -12,6 +12,7 @@ const CardList = ({
     todayRecovered,
   },
   setCasesType,
+  casesType,
 }) => {
   return (
     <CardListContainer>
@@ -19,25 +20,28 @@ const CardList = ({
         onClick={(e) => {
           setCasesType('cases');
         }}
-        title='Cases'
+        title='cases'
         totalCases={cases}
         todayCases={todayCases}
+        casesType={casesType}
       />
       <Card
         onClick={(e) => {
           setCasesType('deaths');
         }}
-        title='Deaths'
+        title='deaths'
         totalCases={deaths}
         todayCases={todayDeaths}
+        casesType={casesType}
       />
       <Card
         onClick={(e) => {
           setCasesType('recovered');
         }}
-        title='Recovered'
+        title='recovered'
         totalCases={recovered}
         todayCases={todayRecovered}
+        casesType={casesType}
       />
     </CardListContainer>
   );

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import GlobalStyle from './styles/GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import theme from './styles/theme';
 
 import {
   Container,
@@ -79,28 +81,35 @@ function App() {
   console.log(mapCountries);
 
   return (
-    <Container>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <LeftSection>
-        <Header>
-          <Heading> Covid-19 - Tracker </Heading>
-          <CountryDropdown
-            countries={countryNames}
-            handleCountryChange={handleCountryChange}
+      <Container>
+        <LeftSection>
+          <Header>
+            <Heading> Covid-19 - Tracker </Heading>
+            <CountryDropdown
+              countries={countryNames}
+              handleCountryChange={handleCountryChange}
+            />
+          </Header>
+          <CardList
+            casesType={casesType}
+            setCasesType={setCasesType}
+            countryData={countryData}
           />
-        </Header>
-        <CardList setCasesType={setCasesType} countryData={countryData} />
-        <Map
-          mapCountries={mapCountries}
-          mapPosition={mapPosition}
-          mapZoom={mapZoom}
-        />
-      </LeftSection>
-      <RightSection>
-        <Table tableData={tableData} />
-        <Chart casesType={casesType} />
-      </RightSection>
-    </Container>
+          <Map
+            mapCountries={mapCountries}
+            mapPosition={mapPosition}
+            mapZoom={mapZoom}
+            casesType={casesType}
+          />
+        </LeftSection>
+        <RightSection>
+          <Chart casesType={casesType} />
+          <Table tableData={tableData} />
+        </RightSection>
+      </Container>
+    </ThemeProvider>
   );
 }
 

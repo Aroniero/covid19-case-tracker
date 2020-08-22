@@ -9,17 +9,16 @@ import {
 } from './Card.style';
 // import CountUp from 'react-countup';
 
-const Card = ({ title, totalCases, todayCases, ...props }) => {
+const Card = ({ title, totalCases, todayCases, casesType, ...props }) => {
+  console.log(casesType);
+
   return (
     <CardWrapper
       onClick={props.onClick}
+      color={casesType === title ? casesType : null}
       // color={color}
     >
-      <CardHeader
-      // color={color}
-      >
-        {title}
-      </CardHeader>
+      <CardHeader>{title.toUpperCase()}</CardHeader>
       <CardBody>
         <CardValue
         // start={0} end={value} duration={2} separator=','
