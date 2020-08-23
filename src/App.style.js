@@ -27,9 +27,9 @@ export const Header = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-  /* @media (${({ theme }) => theme.media.lg}) {
+  @media (${({ theme }) => theme.media.lg}) {
     margin-top: 0;
-  } */
+  }
 `;
 
 export const Heading = styled.h1`

@@ -12,6 +12,10 @@ export const CardWrapper = styled.div`
   border-bottom: 10px solid
     ${({ theme, color }) => (color ? theme.colors[color] : 'white')};
   min-width: 31%;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const CardHeader = styled.h2`

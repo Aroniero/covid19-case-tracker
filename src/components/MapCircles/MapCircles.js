@@ -1,7 +1,6 @@
 import React from 'react';
 import { Popup, Circle } from 'react-leaflet';
-import colors from '../../styles/colors';
-import radius from '../../styles/radius';
+import theme from '../../styles/theme';
 import styled from 'styled-components';
 
 const PopupImage = styled.img`
@@ -22,10 +21,10 @@ const MapCircles = ({ data, casesType = 'recovered' }) => {
   return data.map((country, i) => (
     <Circle
       center={[country.countryInfo.lat, country.countryInfo.long]}
-      color={colors[casesType]}
-      fillColor={colors[casesType]}
+      color={theme.colors[casesType]}
+      fillColor={theme.colors[casesType]}
       fillOpacity={0.4}
-      radius={Math.sqrt(country[casesType]) * radius[casesType]}
+      radius={Math.sqrt(country[casesType]) * theme.circleRadius[casesType]}
       key={i}
     >
       <Popup>

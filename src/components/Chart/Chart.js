@@ -2,19 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { ChartContainer } from './Chart.style';
 import theme from '../../styles/theme';
+import { useChartData } from './Chart.hook';
 
 const Chart = ({ casesType }) => {
-  const [chartDates, setChartDates] = useState([]);
-  const [chartValues, setChartValues] = useState([]);
-
-  useEffect(() => {
-    fetch('https://disease.sh/v3/covid-19/historical/all?lastdays=30')
-      .then((response) => response.json())
-      .then((data) => {
-        setChartDates(Object.keys(data[casesType]));
-        setChartValues(Object.values(data[casesType]));
-      });
-  }, [casesType]);
+  const [chartDates, chartValues] = useChartData(casesType);
 
   return (
     <ChartContainer>
