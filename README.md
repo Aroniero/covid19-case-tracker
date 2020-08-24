@@ -4,8 +4,6 @@
 
 # Covid19-case-tracker
 
-<img src="src/assets/logo/CovidLogo.svg" alt="Covid" />
-
 </div>
 
 ## Project Overview 🎉
