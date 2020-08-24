@@ -25,6 +25,7 @@ export const useCountryInfo = () => {
 };
 
 export const useCountryData = () => {
+  // eslint-disable-next-line
   const [currentCountry, setCurrentCountry] = useState('global');
   const [countryData, setCountryData] = useState({});
   const [mapPosition, setMapPosition] = useState({

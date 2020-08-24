@@ -15,27 +15,6 @@ export const Container = styled.div`
     max-width: 1200px;
   }
 `;
-export const Header = styled.div`
-  padding: 20px 20px;
-  border-radius: 10px;
-  margin: 20px 20px;
-  box-shadow: 0px 0px 10px -6px #000000;
-  background-color: white;
-
-  @media (${({ theme }) => theme.media.md}) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  @media (${({ theme }) => theme.media.lg}) {
-    margin-top: 0;
-  }
-`;
-
-export const Heading = styled.h1`
-  text-align: center;
-  padding: 10px 0;
-`;
 
 export const LeftSection = styled.section`
   width: 100%;

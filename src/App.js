@@ -5,15 +5,9 @@ import GlobalStyle from './styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
 import theme from './styles/theme';
 
-import {
-  Container,
-  Header,
-  Heading,
-  LeftSection,
-  RightSection,
-} from './App.style';
+import { Container, LeftSection, RightSection } from './App.style';
 
-import CountryDropdown from './components/CountryDropdown/CountryDropdown';
+import Header from './components/Header/Header';
 import CardList from './components/CardList/CardList';
 import Map from './components/Map/Map';
 import Table from './components/Table/Table';
@@ -34,13 +28,11 @@ function App() {
       <GlobalStyle />
       <Container>
         <LeftSection>
-          <Header>
-            <Heading> Covid-19 - Case - Tracker </Heading>
-            <CountryDropdown
-              countries={countryNames}
-              handleCountryChange={handleCountryChange}
-            />
-          </Header>
+          <Header
+            casesType={casesType}
+            countryNames={countryNames}
+            handleCountryChange={handleCountryChange}
+          />
           <CardList
             casesType={casesType}
             setCasesType={setCasesType}
