@@ -1,6 +1,10 @@
-<div align="center">
+<div style="display: flex;" align="center">
 
-    # Covid19-case-tracker
+<img src="src/assets/logo/CovidLogo.svg" alt="Covid" />
+
+# Covid19-case-tracker
+
+<img src="src/assets/logo/CovidLogo.svg" alt="Covid" />
 
 </div>
 
