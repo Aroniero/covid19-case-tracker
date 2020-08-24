@@ -10,7 +10,7 @@ const theme = {
     recovered: 'rgba(0, 204, 17, 0.3)',
   },
   circleRadius: {
-    cases: '1000',
+    cases: '700',
     recovered: '800',
     deaths: '2000',
   },

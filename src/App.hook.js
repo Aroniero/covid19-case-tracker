@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import fetchGlobalData from './api/fetchGlobalData';
 import fetchCountryData from './api/fetchCountryData';
 import fetchCountriesData from './api/fetchCountriesData';
@@ -47,18 +47,15 @@ export const useCountryData = () => {
     const getData = async () => {
       if (countryCode === 'global') {
         data = await fetchGlobalData();
+        setMapPosition([51.505, -0.09]);
       } else {
         data = await fetchCountryData(countryCode);
+        setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
       }
-
       setCurrentCountry(countryCode);
       setCountryData(data);
-      countryCode === 'global'
-        ? setMapPosition([51.505, -0.09])
-        : setMapPosition([data.countryInfo.lat, data.countryInfo.long]);
       setMapZoom(4);
     };
-
     getData();
   };
 

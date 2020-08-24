@@ -28,12 +28,6 @@ export const CardBody = styled.div`
   flex-direction: column;
 `;
 
-export const CardTitle = styled.h2``;
-
 export const CardValue = styled(CountUp)`
   padding: 2px 0;
-`;
-
-export const CardDate = styled.p`
-  margin-top: 10px;
 `;

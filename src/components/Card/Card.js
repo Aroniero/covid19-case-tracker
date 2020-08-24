@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  CardWrapper,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  CardValue,
-  CardDate,
-} from './Card.style';
+import { CardWrapper, CardHeader, CardBody, CardValue } from './Card.style';
 
 const Card = ({ title, totalCases, todayCases, casesType, ...props }) => {
   return (

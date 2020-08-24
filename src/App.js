@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCountryInfo, useCountryData } from './App.hook';
 
 import GlobalStyle from './styles/GlobalStyle';
 import { ThemeProvider } from 'styled-components';
@@ -17,7 +18,6 @@ import CardList from './components/CardList/CardList';
 import Map from './components/Map/Map';
 import Table from './components/Table/Table';
 import Chart from './components/Chart/Chart';
-import { useCountryInfo, useCountryData } from './App.hook';
 
 function App() {
   const [countryNames, tableData, mapCountries] = useCountryInfo();

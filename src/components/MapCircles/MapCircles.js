@@ -1,23 +1,10 @@
 import React from 'react';
 import { Popup, Circle } from 'react-leaflet';
 import theme from '../../styles/theme';
-import styled from 'styled-components';
 
-const PopupImage = styled.img`
-  width: 100px;
-  border: 1px solid black;
-`;
+import { PopupImage, PopupHeading, PopupDesc } from './MapCircles.style';
 
-const PopupHeading = styled.h2`
-  margin-top: 5px;
-  text-transform: uppercase;
-`;
-const PopupDesc = styled.p`
-  margin: 10px 0;
-  text-transform: capitalize;
-`;
-
-const MapCircles = ({ data, casesType = 'recovered' }) => {
+const MapCircles = ({ data, casesType = 'cases' }) => {
   return data.map((country, i) => (
     <Circle
       center={[country.countryInfo.lat, country.countryInfo.long]}
