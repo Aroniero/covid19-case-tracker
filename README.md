@@ -17,15 +17,15 @@ This project was inspired by this <a href="https://www.youtube.com/watch?v=cF3pI
 
 ## Tech/framework used 🔧
 
-| Name                                                             |                                           Description                                           |
+| Name                                                             | Description                                           |
 | ---------------------------------------------------------------- | :---------------------------------------------------------------------------------------------: |
-| [React](https://reactjs.org/)                                    |                              Library for building user interfaces                               |
-| [Styled Components](https://styled-components.com/)              |                            Visual primitives for the component age.                             |
-| [chart.js](https://www.chartjs.org/)                             |               Simple yet flexible JavaScript charting for designers & developers                |
-| [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2) |                                   React wrapper for Chart.js                                    |
-| [React CountUp](https://www.npmjs.com/package/react-countup)     | Can be used to quickly create animations that display numerical data in a more interesting way. |
-| [Leaflet](https://leafletjs.com/)                                |   Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps.   |
-| [Figma](https://www.figma.com/)                                  |                           Vector graphics editor and prototyping tool                           |
+| [React](https://reactjs.org/)                                    | Library for building user interfaces                               |
+| [Styled Components](https://styled-components.com/)              | Visual primitives for the component age.                             |
+| [chart.js](https://www.chartjs.org/)                             | Simple yet flexible JavaScript charting for designers & developers                |
+| [react-chartjs-2](https://github.com/jerairrest/react-chartjs-2) | React wrapper for Chart.js                                    |
+| [React CountUp](https://www.npmjs.com/package/react-countup)     |Can be used to quickly create animations that display numerical data in a more interesting way. |
+| [Leaflet](https://leafletjs.com/)                                | Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps.   |
+| [Figma](https://www.figma.com/)                                  | Vector graphics editor and prototyping tool                           |
 
 ## Screenshots 📺
 
